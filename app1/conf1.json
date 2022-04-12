@@ -1,0 +1,1 @@
+{"ID": "1", "config": {"address": "http://127.0.0.1:5000/nowy", "frequency": 10.0, "on_off": "ON", "protocol": "HTTP", "source": "Divvy_Bicycle_Stations.csv", "topic": ""}}
