@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+    p {
+    text-align:center
+    }
+
+    .myDiv {
+    text-align: center;
+    }
+
+    input[type=submit] {
+    width: 10em;  height: 2em;
+    }
+    </style>
+
+    <title>Admin Page</title>
+</head>
+<body>
+<h1 style="text-align:center">Admin panel</h1>
+<p> </p>
+
+
+        <form method="post"  id="first_form">
+
+            <div class="myDiv">
+                <input type="radio" id="new" name="operation" value="new">
+                <label for="new">Add new sensor</label>
+
+                <input type="radio" id="delete" name="operation" value="delete">
+                <label for="delete">Delete existing sensor</label><br>
+            </div>
+
+
+
+            <p></p>
+
+            <p>Sensor ID <input type="text" id="sensor_id" name="sensor_id"></p>
+            <p>Protocol <input type="text" id="protocol" name="protocol" ></p>
+            <p>Address (HTTP/MQTT) <input type="text" id="address" name="address" ></p>
+            <p>Broker topic <input type="text" id="broker_topic" name="broker_topic" ></p>
+            <p>Frequency <input type="text" id="frequency" name="frequency"></p>
+            <p>Source <input type="text" id="source" name="source"></p>
+
+            <div class="myDiv">
+            <input type="radio" id="turn_on" name="on_off" value="ON">
+            <label for="turn_on">TURN ON</label>
+            <input type="radio" id="turn_off" name="on_off" value="OFF">
+            <label for="turn_off">TURN OFF</label>
+            </div>
+
+            <p>{{ message }} </p>
+            <hr/>
+
+            <div class="myDiv">
+                <input type="radio" id="aggregate" name="operation" value="aggregate">
+                <label for="aggregate">Choose applications for aggregating data</label>
+            </div>
+
+            <p></p>
+
+            <div class="myDiv">
+                <input type="checkbox" id="app1" name="app1" value="ok">
+                <label for="app1"> ID: 1</label>
+                <input type="checkbox" id="app2" name="app2" value="ok">
+                <label for="app2"> ID: 2</label>
+                <input type="checkbox" id="app3" name="app3" value="ok">
+                <label for="app3"> ID: 3</label>
+            </div>
+
+            <hr/>
+            <div class="myDiv">
+                <input type="radio" id="filter" name="operation" value="filter">
+                <label for="filter">Filter data</label>
+            </div>
+
+            <p></p>
+
+            <div class="myDiv">
+
+
+
+                <p>
+                    First app address <input type="text" id="app1_address" name="app1_address">
+
+                </p>
+
+                <p>
+                    First field <input type="text" id="f_app1" name="f_app1">
+                    Second field <input type="text" id="s_app1" name="s_app1">
+                    Third field <input type="text" id="t_app1" name="t_app1">
+                </p>
+
+                <hr/>
+
+                <p>
+                    Second app address <input type="text" id="app2_address" name="app2_address">
+                </p>
+
+                <p>
+                    First field <input type="text" id="f_app2" name="f_app2">
+                    Second field <input type="text" id="s_app2" name="s_app2">
+                    Third field <input type="text" id="t_app2" name="t_app2">
+                </p>
+
+                <hr/>
+
+                <p>
+                    Third app address <input type="text" id="app3_address" name="app3_address">
+                </p>
+
+                <p>
+                    First field <input type="text" id="f_app3" name="f_app3">
+                    Second field <input type="text" id="s_app3" name="s_app3">
+                    Third field <input type="text" id="t_app3" name="t_app3">
+                </p>
+
+                <hr/>
+
+                <p>
+                    <input type="checkbox" id="data_from_agg" name="data_from_agg" value="yes">
+                    <label for="data_from_agg"> I want data from aggregator</label>
+                </p>
+
+            </div>
+
+            <hr/>
+            <div class="myDiv">
+                <input type="radio" id="visualize" name="operation" value="visualization">
+                <label for="visualize"> Visualize data</label>
+            </div>
+
+            <p></p>
+
+            <div class="myDiv">
+                <input type="checkbox" id="app1_v" name="app1_v" value="ok">
+                <label for="app1_v"> First app</label>
+                <input type="checkbox" id="app2_v" name="app2_v" value="ok">
+                <label for="app2_v"> Second app</label>
+                <input type="checkbox" id="app3_v" name="app3_v" value="ok">
+                <label for="app3_v"> Third app</label>
+                <input type="checkbox" id="aggregator_v" name="aggregator_v" value="ok">
+                <label for="aggregator_v"> Aggregator</label>
+                <input type="checkbox" id="filter_v" name="filter_v" value="ok">
+                <label for="filter_v"> Filter app</label>
+            </div>
+
+            <hr/>
+
+            <p><input type="submit" value="submit"></p>
+
+
+        </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

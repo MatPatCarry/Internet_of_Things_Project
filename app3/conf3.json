@@ -1,0 +1,1 @@
+{"ID": "3", "config": {"address": "http://127.0.0.1:5000/locations", "frequency": 5.0, "on_off": "ON", "protocol": "HTTP", "source": "Beach_Weather_Stations_-_Automated_Sensors.csv", "topic": ""}}

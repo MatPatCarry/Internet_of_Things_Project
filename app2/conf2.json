@@ -1,0 +1,1 @@
+{"ID": "2", "config": {"address": "http://127.0.0.1:5000/temp", "frequency": 5.0, "on_off": "ON", "protocol": "HTTP", "source": "temp-data-2019.csv", "topic": ""}}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        .myDiv {
+    text-align: center;
+    color: grey;
+    }
+    </style>
+    <title>Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+    {% for i in range(length): %}
+        <div class="myDiv">
+            <p> </p>
+            <p><i> Data from: {{ addresses[i] }}</i></p>
+            <p> </p>
+        </div>
+        {% if i == 0: %}
+            <canvas id='first' width="1500" height="300"></canvas>
+                <script>
+                    const ctx1 = document.getElementById('first');
+                    const firstChart = new Chart(ctx1, {
+                        type: 'line',
+                        data: {
+                            labels: {{ labels[i] | safe }},
+                            datasets: [{
+                                label: {{ titles[i] | safe }},
+                                data: {{ values[i] | safe }},
+                                lineTension: 0.2,
+                                borderColor: 'rgb(75, 192, 192)'
+                            }]
+                        },
+                        options: {
+                        responsive : false
+                        }
+                    });
+                </script>
+        {% elif i == 1: %}
+            <canvas id='second' width="1500" height="300"></canvas>
+                <script>
+                    const ctx2 = document.getElementById('second');
+                    const secondChart = new Chart(ctx2, {
+                        type: 'line',
+                        data: {
+                            labels: {{ labels[i] | safe }},
+                            datasets: [{
+                                label: {{ titles[i] | safe }},
+                                data: {{ values[i] | safe }},
+                                lineTension: 0.2,
+                                borderColor: 'rgb(255, 165, 92)'
+                            }]
+                        },
+                        options: {
+                        responsive : false
+                        }
+                    });
+                </script>
+        {% elif i == 2: %}
+            <canvas id='third' width="1500" height="300"></canvas>
+                <script>
+                    const ctx3 = document.getElementById('third');
+                    const thirdChart = new Chart(ctx3, {
+                        type: 'line',
+                        data: {
+                            labels: {{ labels[i] | safe }},
+                            datasets: [{
+                                label: {{ titles[i] | safe }},
+                                data: {{ values[i] | safe }},
+                                lineTension: 0.2,
+                                borderColor: 'rgb(0, 209, 244)'
+                            }]
+                        },
+                        options: {
+                        responsive : false
+                        }
+                    });
+                </script>
+        {% elif i == 3: %}
+            <canvas id='fourth' width="1500" height="300"></canvas>
+                <script>
+                    const ctx4 = document.getElementById('fourth');
+                    const fourthChart = new Chart(ctx4, {
+                        type: 'line',
+                        data: {
+                            labels: {{ labels[i] | safe }},
+                            datasets: [{
+                                label: {{ titles[i] | safe }},
+                                data: {{ values[i] | safe }},
+                                lineTension: 0.2,
+                                borderColor: 'rgb(246, 209, 244)'
+                            }]
+                        },
+                        options: {
+                        responsive : false
+                        }
+                    });
+                </script>
+        {% endif %}
+        <hr/>
+    {% endfor %}
+    <!---
+    <canvas id="secondChart" width="1200" height="300"></canvas>
+
+
+const ctx2  = document.getElementById('secondChart');
+const secondChart = new Chart(ctx2, {
+    type: 'line',
+    data: {
+        labels: {{ labels[1] | safe }},
+        datasets: [{
+            label: {{ titles[1] | safe }},
+            data: {{ values[1] | safe }},
+            lineTension: 0.2,
+            borderColor: 'rgb(75, 192, 192)'
+        }]
+    },
+    options: {
+    responsive : false
+    }
+});
+--->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
